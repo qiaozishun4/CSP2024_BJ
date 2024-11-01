@@ -1,0 +1,73 @@
+#include <iostream>
+#include <cstdio>
+using namespace std;
+bool DA, D2, D3, D4, D5, D6, D7, D8, D9, DT, DJ, DQ, DK;
+bool CA, C2, C3, C4, C5, C6, C7, C8, C9, CT, CJ, CQ, CK;
+bool HA, H2, H3, H4, H5, H6, H7, H8, H9, HT, HJ, HQ, HK;
+bool SA, S2, S3, S4, S5, S6, S7, S8, S9, ST, SJ, SQ, SK;
+int main() {
+    freopen("poker.in", "r", stdin);
+    freopen("poker.out", "w", stdout);
+    int p;
+    string h;
+    scanf("%d", &p);
+    for (int i = 1; i <= p; ++ i) {
+        cin >> h;
+        if (h == "DA") DA = 1;
+        if (h == "D2") D2 = 1;
+        if (h == "D3") D3 = 1;
+        if (h == "D4") D4 = 1;
+        if (h == "D5") D5 = 1;
+        if (h == "D6") D6 = 1;
+        if (h == "D7") D7 = 1;
+        if (h == "D8") D8 = 1;
+        if (h == "D9") D9 = 1;
+        if (h == "DT") DT = 1;
+        if (h == "DJ") DJ = 1;
+        if (h == "DQ") DQ = 1;
+        if (h == "DK") DK = 1;
+        if (h == "CA") CA = 1;
+        if (h == "C2") C2 = 1;
+        if (h == "C3") C3 = 1;
+        if (h == "C4") C4 = 1;
+        if (h == "C5") C5 = 1;
+        if (h == "C6") C6 = 1;
+        if (h == "C7") C7 = 1;
+        if (h == "C8") C8 = 1;
+        if (h == "C9") C9 = 1;
+        if (h == "CT") CT = 1;
+        if (h == "CJ") CJ = 1;
+        if (h == "CQ") CQ = 1;
+        if (h == "CK") CK = 1;
+        if (h == "HA") HA = 1;
+        if (h == "H2") H2 = 1;
+        if (h == "H3") H3 = 1;
+        if (h == "H4") H4 = 1;
+        if (h == "H5") H5 = 1;
+        if (h == "H6") H6 = 1;
+        if (h == "H7") H7 = 1;
+        if (h == "H8") H8 = 1;
+        if (h == "H9") H9 = 1;
+        if (h == "HT") HT = 1;
+        if (h == "HJ") HJ = 1;
+        if (h == "HQ") HQ = 1;
+        if (h == "HK") HK = 1;
+        if (h == "SA") SA = 1;
+        if (h == "S2") S2 = 1;
+        if (h == "S3") S3 = 1;
+        if (h == "S4") S4 = 1;
+        if (h == "S5") S5 = 1;
+        if (h == "S6") S6 = 1;
+        if (h == "S7") S7 = 1;
+        if (h == "S8") S8 = 1;
+        if (h == "S9") S9 = 1;
+        if (h == "ST") ST = 1;
+        if (h == "SJ") SJ = 1;
+        if (h == "SQ") SQ = 1;
+        if (h == "SK") SK = 1;
+    }
+    cout << 52 - (DA + D2 + D3 + D4 + D5 + D6 + D7 + D8 + D9 + DT + DJ + DQ + DK + CA + C2 + C3 + C4 + C5 + C6 + C7 + C8 + C9 + CT + CJ + CQ + CK + HA + H2 + H3 + H4 + H5 + H6 + H7 + H8 + H9 + HT + HJ + HQ + HK + SA + S2 + S3 + S4 + S5 + S6 + S7 + S8 + S9 + ST + SJ + SQ + SK);
+    fclose(stdin);
+    fclose(stdout);
+    return 0;
+}

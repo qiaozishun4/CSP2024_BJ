@@ -1,0 +1,73 @@
+#include<bits/stdc++.h>
+using namespace std;
+int a,n;
+int main(){
+    freopen("sticks.in","r",stdin);
+    freopen("sticks.out","w",stdout);
+    cin>>n;
+    while(n--){
+        int x;
+        cin>>x;
+        if(x<2){
+            cout<<-1;
+            cout<<endl;
+            continue;
+        }
+        if(x==2){
+            cout<<1;
+            cout<<endl;
+            continue;
+        }
+        if(x==3){
+            cout<<7;
+            cout<<endl;
+            continue;
+        }
+        if(x==4){
+            cout<<4;
+            cout<<endl;
+            continue;
+        }
+        if(x==5){
+            cout<<5;
+            cout<<endl;
+            continue;
+        }
+        if(x==6){
+            cout<<9;
+            cout<<endl;
+            continue;
+        }
+        if(x==7){
+            cout<<8;
+            cout<<endl;
+            continue;
+        }
+        else if(x%7==0){
+            for(int i=1;i<=x/7;i++){
+                cout<<8;
+            }
+            cout<<endl;
+        }
+        if(x==8){
+            cout<<10;
+            cout<<endl;
+        }
+        if(x==9){
+            cout<<18;
+            cout<<endl;
+        }
+        if(x==10){
+            cout<<40;
+            cout<<endl;
+        }
+        if(x==18){
+            cout<<208;
+            cout<<endl;
+        }
+        if(x==20){
+            cout<<688;
+            cout<<endl;
+        }
+    }
+}

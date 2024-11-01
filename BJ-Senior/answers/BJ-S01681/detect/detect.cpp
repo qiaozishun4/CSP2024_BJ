@@ -1,0 +1,170 @@
+#include<iostream>
+#include<cstdio>
+#include<cstring>
+#include<string>
+#include<algorithm>
+#include<cmath>
+using namespace std;
+struct o{
+    long long s,f;
+} c[100005];
+long long t,n,m,l,vl,i,j,k,a[100005],v[100005],d[100005],p[100005],sum,vi[100005],b[100005],vama,e[100005],mn,h,aaa=1,bbb=1,ccc=1;
+bool cmp(o x,o y){
+    return x.s<y.s;
+}
+int main(){
+    freopen("detect.in","r",stdin);
+    freopen("detect.out","w",stdout);
+    cin>>t;
+    for(k=1;k<=t;k++){
+        sum=0;
+        vama=0;
+        h=0;
+        aaa=1;
+        bbb=1;
+        ccc=1;
+        cin>>n>>m>>l>>vl;
+        for(i=1;i<=n;i++){
+            scanf("%lld%lld%lld",&d[i],&v[i],&a[i]);
+            if(a[i]>0){
+                aaa=0;
+                ccc=0;
+            }
+            if(a[i]<0){
+                aaa=0;
+                bbb=0;
+            }
+            if(a[i]==0){
+                bbb=0;
+                ccc=0;
+            }
+        }
+        for(i=1;i<=m;i++){
+            scanf("%lld",&p[i]);
+        }
+        if(aaa==1){
+            for(i=1;i<=n;i++){
+                if(v[i]>vl&&d[i]<=p[m]){
+                    sum++;
+                }
+            }
+            if(sum==0){
+                m++;
+            }
+            cout<<sum<<" "<<m-1<<endl;
+            continue;
+        }
+        if(bbb==1){
+            for(i=1;i<=n;i++){
+                if(v[i]*v[i]+2*a[i]*(p[m]-d[i])>vl*vl&&d[i]<=p[m]){
+                    sum++;
+                }
+            }
+            if(sum==0){
+                m++;
+            }
+            cout<<sum<<" "<<m-1<<endl;
+            continue;
+        }
+        for(i=1;i<=n;i++){
+            if(d[i]>p[m]){
+                continue;
+            }
+            if(a[i]==0){
+                if(v[i]>vl){
+                    sum++;
+                    vi[sum]=i;
+                    for(j=m;j>=1;j--){
+                        if(p[j]<d[i]){
+                            break;
+                        }
+                        b[i]=j;
+                    }
+                }
+                continue;
+            }
+            if(a[i]>0){
+                bool flag=false;
+                for(j=m;j>=1;j--){
+                    if(p[j]<d[i]){
+                        break;
+                    }
+                    if(v[i]*v[i]+2*a[i]*(p[j]-d[i])<=vl*vl){
+                        break;
+                    }
+                    if(v[i]*v[i]+2*a[i]*(p[j]-d[i])>vl*vl){
+                        b[i]=j;
+                        flag=true;
+                    }
+                }
+                if(flag){
+                    sum++;
+                    vi[sum]=i;
+                }
+                continue;
+            }
+            if(a[i]<0){
+                if(v[i]<vl){
+                    continue;
+                }
+                bool flag=false;
+                for(j=m;j>=1;j--){
+                    if(p[j]<d[i]){
+                        break;
+                    }
+                    if(v[i]*v[i]+2*a[i]*(p[j]-d[i])>vl*vl&&flag==false){
+                        b[i]=j;
+                        flag=true;
+                    }
+                    e[i]=j;
+                }
+                if(flag){
+                    sum++;
+                    vi[sum]=i;
+                }
+                continue;
+            }
+        }
+        cout<<sum<<" ";
+        for(i=1;i<=sum;i++){
+            if(a[vi[i]]>=0){
+                vama=max(vama,b[vi[i]]);
+            }
+            if(a[vi[i]]<0){
+                c[++h].s=e[vi[i]];
+                c[h].f=b[vi[i]];
+            }
+        }
+        sort(c+1,c+h+1,cmp);
+        long long minn=0x3f3f3f3f3f3f3f3f,lr=0,rr=0,ans=0;
+        for(i=1;i<=h;i++){
+            if(c[i].s>rr){
+                ans++;
+                minn=0x3f3f3f3f3f3f3f3f;
+                lr=c[i].s;
+                rr=c[i].f;
+            }
+            rr=minn=min(minn,c[i].f);
+        }
+        if(minn<vama){
+            ans++;
+        }
+        if(sum!=0&&ans==0){
+            ans++;
+        }
+        cout<<m-ans<<endl;
+        mn=max(m,n);
+        for(i=1;i<=mn;i++){
+            a[i]=0;
+            b[i]=0;
+            c[i].s=0;
+            c[i].f=0;
+            d[i]=0;
+            e[i]=0;
+            v[i]=0;
+            p[i]=0;
+            vi[i]=0;
+        }
+    }
+    return 0;
+}

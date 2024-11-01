@@ -1,0 +1,83 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+long long const N=2011;
+long long number[10]={6,2,5,5,4,5,6,3,7,6},c0,n,m,f0=0;
+int main(){
+    long long i,j,c1,c2,f1=0,f2=0,T,x,y;
+    freopen("sticks.in","r",stdin);
+    freopen("sticks.out","w",stdout);
+    cin>>T;
+    while(T--){
+        cin>>n;
+        if(n<8){
+            if(n==1){
+                cout<<"-1";
+            }
+            if(n==2){
+                cout<<"1";
+            }
+            if(n==3){
+                cout<<"7";
+            }
+            if(n==4){
+                cout<<"4";
+            }
+            if(n==5){
+                cout<<"2";
+            }
+            if(n==6){
+                cout<<"6";
+            }
+            if(n==7){
+                cout<<"8";
+            }
+        }
+        else{
+            if(n%7==0){
+                for(i=1;i<=n/8;i++){
+                    cout<<"8";
+                }
+            }
+            if(n%7==1){
+                cout<<"10";
+                for(i=2;i<=n/8;i++){
+                    cout<<"8";
+                }
+            }
+            if(n%7==2){
+                cout<<"1";
+                for(i=1;i<=n/8;i++){
+                    cout<<"8";
+                }
+            }
+            if(n%7==3){
+                cout<<"23";
+                for(i=2;i<=n/8;i++){
+                    cout<<"8";
+                }
+            }
+            if(n%7==4){
+                cout<<"20";
+                for(i=2;i<=n/8;i++){
+                    cout<<"8";
+                }
+            }
+            if(n%7==5){
+                cout<<"2";
+                for(i=1;i<=n/8;i++){
+                    cout<<"8";
+                }
+            }
+            if(n%7==6){
+                cout<<"6";
+                for(i=1;i<=n/8;i++){
+                    cout<<"8";
+                }
+            }
+        }
+        cout<<"\n";
+    }
+    return 0;
+}
+

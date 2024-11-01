@@ -1,0 +1,160 @@
+#include<bits/stdc++.h>
+using namespace std;
+//1:NaN
+//2:1
+//3:7
+//4:4
+//5:2,3,5
+//6:0,6,9
+//7:8
+/*
+long long T,n,nnum,ans=INT_MAX,flag;
+void check(int n,int o){
+    if(n==0){
+        return;
+    }
+    if(n==1){
+        nnum=-1;
+        flag=1;
+        return;
+    }
+    ans==nnum;
+
+    if(n>=6&&(n-6)>1){
+        nnum=nnum;
+        check(n-6,10*o);
+        if(nnum!=-1){
+            ans=min(ans,nnum);
+        }
+    }
+    if(n>=2){
+        nnum=nnum+1*o;
+        check(n-2,10*o);
+        if(nnum!=-1){
+            ans=min(ans,nnum);
+        }
+    }
+    if(n>=5){
+        nnum=nnum+2*o;
+        check(n-5,10*o);
+        if(nnum!=-1){
+            ans=min(ans,nnum);
+        }
+    }
+    if(n>=4){
+        nnum=nnum+4*o;
+        check(n-4,10*o);
+        if(nnum!=-1){
+            ans=min(ans,nnum);
+        }
+    }
+    if(n>=6){
+        nnum=nnum+6*o;
+        check(n-6,10*o);
+        if(nnum!=-1){
+            ans=min(ans,nnum);
+        }
+    }
+
+
+    if(n>=3){
+        nnum=nnum+7+7*o;
+        check(n-3,10*o);
+        if(nnum!=-1){
+            ans=min(ans,nnum);
+        }
+    }
+    if(n>=7){
+        nnum=nnum+8*o;
+        check(n-7,10*o);
+        if(nnum!=-1){
+            ans=min(ans,nnum);
+        }
+    }
+}
+int main(){
+    freopen("sticks1.in","r",stdin);
+    freopen("sticks1.out","w",stdout);
+    cin>>T;
+    for(int i=0;i<T;i++){
+        cin>>n;
+        check(n,1);
+        if(ans==INT_MAX&&flag==1){
+            cout<<-1<<endl;
+        }
+        else{
+            cout<<ans<<endl;
+        }
+        nnum=0;
+        ans=INT_MAX;
+        flag=0;
+    }
+}
+*/
+long long  T,n,hub[2024],ans,tmp,cont;
+int main(){
+    hub[1]=-1;
+    hub[2]=1;
+    hub[3]=7;
+    hub[4]=4;
+    hub[5]=5;
+    hub[6]=6;
+    hub[8]=10;
+    hub[9]=13;
+    hub[10]=22;
+    hub[11]=20;
+    hub[12]=28;
+    hub[13]=68;
+    hub[15]=108;
+    hub[16]=188;
+    hub[17]=200;
+    hub[18]=208;
+    hub[19]=288;
+    hub[20]=688;
+    hub[22]=1688;
+    hub[23]=1888;
+    hub[24]=2288;
+    hub[25]=2088;
+    hub[26]=2888;
+    hub[27]=6888;
+    hub[28]=12888;
+    hub[29]=16888;
+    hub[30]=18888;
+    hub[31]=18888;
+    hub[32]=26888;
+    hub[33]=28888;
+    hub[34]=68888;
+    hub[36]=168888;
+    hub[37]=188888;
+    hub[38]=228888;
+    hub[39]=268888;
+    hub[40]=288888;
+    hub[41]=688888;
+    hub[43]=1688888;
+    hub[44]=1888888;
+    hub[45]=2288888;
+    hub[47]=2888888;
+    hub[48]=6888888;
+    hub[50]=16888888;
+    hub[51]=18888888;
+    freopen("sticks.in","r",stdin);
+    freopen("sticks.out","w",stdout);
+    cin>>T;
+    for(int i=0;i<T;i++){
+        cin>>n;
+        if(n%7==0){
+            ans=0,tmp=0;cont=1;
+            tmp=n/7;
+            for(int i=1;i<=tmp;i++){
+                ans+=cont*8;
+
+                cont=cont*10;
+            }
+            cout<<ans<<endl;
+        }
+        else{
+            cout<<hub[n]<<endl;
+        }
+    }
+    return 0;
+}

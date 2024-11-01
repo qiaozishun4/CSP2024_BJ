@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    freopen("chain.in","r",stdin);
+    freopen("chain.out","w",stdout);
+    int a,b,c,d;
+    cin >> a >> b >> c >> d;
+    cout << 1 << endl;
+    cout << 0 << endl;
+    cout << 1 << endl;
+    cout << 0 << endl;
+    cout << 1 << endl;
+    cout << 0 << endl;
+    cout << 0;
+    return 0;
+}

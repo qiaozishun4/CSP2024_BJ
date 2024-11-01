@@ -1,0 +1,112 @@
+#include<bits/stdc++.h>
+using namespace std;
+char a[1001][1001];
+int ans[1001][1001][10]={0};
+int main()
+{
+    freopen("explore.in","r",stdin);
+    freopen("explore.out","w",stdout);
+    int i,j,c,n[10],m[10],k,x,y,d,t,sum,s=0;
+    cin>>t;
+    for(i=1;i<=t;i++)
+    {
+        cin>>n[i]>>m[i]>>k;
+        cin>>x>>y>>d;
+        for(j=1;j<=n[i];j++)
+        {
+            //cout<<"bbb"<<endl;
+            for(c=1;c<=m[i];c++)
+                cin>>a[j][c];
+        }
+        //cout<<"aaa"<<endl;
+        ans[x][y][i]++;
+        while(k>0)
+        {
+            if(d==0)
+            {
+                //cout<<"12"<<y+1<<endl;
+                if(y+1<=m[i] and y+1>=1 and a[x][y+1]=='.')
+                {
+                    k--;
+                    //cout<<k<<endl;
+                    ans[x][y+1][i]++;
+                    y=y+1;
+                    //cout<<y<<endl;
+                }
+                else
+                {
+                    k--;
+                    d=(d+1)%4;
+                }
+                continue;
+            }
+            if(d==1)
+            {
+                //cout<<"12"<<x+1<<endl;
+                if(x+1<=n[i] and x+1>=1 and a[x+1][y]=='.')
+                {
+                    k--;
+                    //cout<<k<<endl;
+                    ans[x+1][y][i]++;
+                    //cout<<"11"<<endl;
+                    x=x+1;
+                }
+                else
+                {
+                    k--;
+                    d=(d+1)%4;
+                }
+                continue;
+            }
+            if(d==2)
+            {
+                if(y-1<=m[i] and y-1>=1 and a[x][y-1]=='.')
+                {
+                    k--;
+                    ans[x][y-1][i]++;
+                    y=y-1;
+                }
+                else
+                {
+                    k--;
+                    d=(d+1)%4;
+                }
+                continue;
+            }
+            if(d==3)
+            {
+                if(x-1<=n[i] and x-1>=1 and a[x-1][y]=='.')
+                {
+                    k--;
+                    ans[x-1][y][i]++;
+                    y=y-1;
+                }
+                else
+                {
+                    k--;
+                    d=(d+1)%4;
+                }
+                continue;
+            }
+        }
+    }
+    //cout<<"ccc"<<endl;
+    for(i=1;i<=t;i++)
+    {
+        sum=0;
+        for(j=1;j<=n[i];j++)
+        {
+            for(c=1;c<=m[i];c++)
+            {
+                //cout<<"dss"<<endl;
+                if(ans[j][c][i]!=0)
+                {
+                    sum++;
+                    //cout<<sum<<endl;
+                }
+            }
+        }
+        cout<<sum<<endl;
+    }
+    return 0;
+}

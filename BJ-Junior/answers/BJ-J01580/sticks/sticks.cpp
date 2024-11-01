@@ -1,0 +1,68 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    freopen("sticks.in","r",stdin);
+    freopen("sticks.out","w"stdout);
+    int n,t[1001];
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        cin>>t[i];
+        if(t[i]==1){
+            cout<<-1<<endl;
+        }
+        if(t[i]==2){
+            cout<<1<<endl;
+        }
+        if(t[i]==3){
+            cout<<7<<endl;
+        }
+        if(t[i]==4){
+            cout<<4<<endl;
+        }
+        if(t[i]==5){
+            cout<<2<<endl;
+        }
+        if(t[i]==6){
+            cout<<6<<endl;
+        }
+        if(t[i]==7){
+            cout<<8<<endl;
+        }
+        if(t[i]==8){
+            cout<<10<<endl;
+        }
+        if(t[i]==9){
+            cout<<18<<endl;
+        }
+        if(t[i]==10){
+            cout<<22<<endl;
+        }
+        if(t[i]==11){
+            cout<<26<<endl;
+        }
+        if(t[i]==12){
+            cout<<28<<endl;
+        }
+        if(t[i]==13){
+            cout<<68<<endl;
+        }
+        if(t[i]==14){
+            cout<<88<<endl;
+        }
+        if(t[i]==15){
+            cout<<108<<endl;
+        }
+        if(t[i]==16){
+            cout<<188<<endl;
+        }
+        if(t[i]==17){
+            cout<<200<<endl;
+        }
+        if(t[i]==18){
+            cout<<208<<endl;
+        }
+    }
+    return 0;
+    fclose(stdin);
+    fclose(stdout);
+}

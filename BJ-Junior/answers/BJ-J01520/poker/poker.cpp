@@ -1,0 +1,161 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int ans,h[10][20],n;
+
+int main()
+{
+    freopen("poker.in","r",stdin);
+    freopen("poker.out","w",stdout);
+    cin>>n;
+    for(int i=1;i<=n;i++)
+    {
+        char a,b;
+        cin>>a>>b;
+        if(a=='D')
+        {
+            if('9'>=b && b>='2')
+            {
+                h[1][b-'0']++;
+                continue;
+            }
+            if(b=='A')
+            {
+                h[1][1]++;
+                continue;
+            }
+            if(b=='T')
+            {
+                h[1][10]++;
+                continue;
+            }
+            if(b=='J')
+            {
+                h[1][11]++;
+                continue;
+            }
+            if(b=='Q')
+            {
+                h[1][12]++;
+                continue;
+            }
+            if(b=='K')
+            {
+                h[1][13]++;
+                continue;
+            }
+        }
+        if(a=='C')
+        {
+            if('9'>=b && b>='2')
+            {
+                h[2][b-'0']++;
+                continue;
+            }
+            if(b=='A')
+            {
+                h[2][1]++;
+                continue;
+            }
+            if(b=='T')
+            {
+                h[2][10]++;
+                continue;
+            }
+            if(b=='J')
+            {
+                h[2][11]++;
+                continue;
+            }
+            if(b=='Q')
+            {
+                h[2][12]++;
+                continue;
+            }
+            if(b=='K')
+            {
+                h[2][13]++;
+                continue;
+            }
+        }
+        if(a=='H')
+        {
+            if('9'>=b && b>='2')
+            {
+                h[3][b-'0']++;
+                continue;
+            }
+            if(b=='A')
+            {
+                h[3][1]++;
+                continue;
+            }
+            if(b=='T')
+            {
+                h[3][10]++;
+                continue;
+            }
+            if(b=='J')
+            {
+                h[3][11]++;
+                continue;
+            }
+            if(b=='Q')
+            {
+                h[3][12]++;
+                continue;
+            }
+            if(b=='K')
+            {
+                h[3][13]++;
+                continue;
+            }
+        }
+        if(a=='S')
+        {
+            if('9'>=b && b>='2')
+            {
+                h[4][b-'0']++;
+                continue;
+            }
+            if(b=='A')
+            {
+                h[4][1]++;
+                continue;
+            }
+            if(b=='T')
+            {
+                h[4][10]++;
+                continue;
+            }
+            if(b=='J')
+            {
+                h[4][11]++;
+                continue;
+            }
+            if(b=='Q')
+            {
+                h[4][12]++;
+                continue;
+            }
+            if(b=='K')
+            {
+                h[4][13]++;
+                continue;
+            }
+        }
+    }
+    for(int i=1;i<=4;i++)
+    {
+
+        for(int j=1;j<=13;j++)
+        {
+            if(!h[i][j])
+            {
+                ans++;
+            }
+        }
+    }
+    cout<<ans<<endl;
+    return 0;
+}

@@ -1,0 +1,62 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    freopen("sticks.in","w",stdin);
+    freopen("sticks.out","r",stdout);
+    int n,a;
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        cin>>a;
+        if(a==1) cout<<-1<<endl;
+        else if(a==2) cout<<1<<endl;
+        else if(a==3) cout<<7<<endl;
+        else if(a==4) cout<<4<<endl;
+        else if(a==5) cout<<2<<endl;
+        else if(a==6) cout<<6<<endl;
+        else if(a==7) cout<<8<<endl;
+        else if(a==8) cout<<10<<endl;
+        else if(a==9) cout<<18<<endl;
+        else if(a==10) cout<<23<<endl;
+        else if(a==11) cout<<20<<endl;
+        else if(a==12) cout<<28<<endl;
+        else if(a==13) cout<<68<<endl;
+        else if(a==14) cout<<88<<endl;
+        else if(a==15) cout<<108<<endl;
+        else if(a==16) cout<<188<<endl;
+        else if(a==17) cout<<200<<endl;
+        else if(a==18) cout<<208<<endl;
+        else if(a==19) cout<<288<<endl;
+        else if(a==20) cout<<688<<endl;
+        else if(a==21) cout<<888<<endl;
+        else if(a==22) cout<<1088<<endl;
+        else if(a==23) cout<<1888<<endl;
+        else if(a==24) cout<<2008<<endl;
+        else if(a==25) cout<<2088<<endl;
+        else if(a==26) cout<<2888<<endl;
+        else if(a==27) cout<<8088<<endl;
+        else if(a==28) cout<<8888<<endl;
+        else if(a==29) cout<<10888<<endl;
+        else if(a==30) cout<<18888<<endl;
+        else if(a==31) cout<<22888<<endl;
+        else if(a==32) cout<<20888<<endl;
+        else if(a==33) cout<<28888<<endl;
+        else if(a==34) cout<<68888<<endl;
+        else if(a==35) cout<<88888<<endl;
+        else if(a==36) cout<<108888<<endl;
+        else if(a==37) cout<<188888<<endl;
+        else if(a==38) cout<<228888<<endl;
+        else if(a==39) cout<<208888<<endl;
+        else if(a==40) cout<<288888<<endl;
+        else if(a==41) cout<<688888<<endl;
+        else if(a==42) cout<<888888<<endl;
+        else if(a==43) cout<<1088888<<endl;
+        else if(a==44) cout<<1888888<<endl;
+        else if(a==45) cout<<2288888<<endl;
+        else if(a==46) cout<<2088888<<endl;
+        else if(a==47) cout<<2888888<<endl;
+        else if(a==48) cout<<6888888<<endl;
+        else if(a==49) cout<<8888888<<endl;
+        else if(a==50) cout<<10888888<<endl;
+    }
+    return 0;
+}

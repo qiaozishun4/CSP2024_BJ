@@ -1,0 +1,127 @@
+#include<bits/stdc++.h>
+using namespace std;
+const int w=100;
+int main()
+{
+    freopen("poker.in","r",stdin);
+    freopen("poker.out","w",stdout);
+    int n[5][15],q;
+    char a,b;
+    cin>>q;
+    for(int i=1;i<=q;i++)
+    {
+        cin>>a>>b;
+        if(b>49&&b<58)
+        {
+            switch(a)
+            {
+            case'D':
+                n[1][b-48]=w;
+                break;
+            case'C':
+                n[2][b-48]=w;
+                break;
+            case'H':
+                n[3][b-48]=w;
+                break;
+            case'S':
+                n[4][b-48]=w;
+                break;
+            }
+        }
+        switch(b)
+        {
+        case'J':
+            switch(a)
+            {
+            case'D':
+                n[1][11]=w;
+                break;
+            case'C':
+                n[2][11]=w;
+                break;
+            case'H':
+                n[3][11]=w;
+                break;
+            case'S':
+                n[4][11]=w;
+                break;
+            }
+            break;
+        case'Q':
+            switch(a)
+            {
+            case'D':
+                n[1][12]=w;
+                break;
+            case'C':
+                n[2][12]=w;
+                break;
+            case'H':
+                n[3][12]=w;
+                break;
+            case'S':
+                n[4][12]=w;
+                break;
+            }
+            break;
+        case'K':
+            switch(a)
+            {
+            case'D':
+                n[1][13]=w;
+                break;
+            case'C':
+                n[2][13]=w;
+                break;
+            case'H':
+                n[3][13]=w;
+                break;
+            case'S':
+                n[4][13]=w;
+                break;
+            }
+            break;
+        case'A':
+            switch(a)
+            {
+                case'D':
+                    n[1][1]=w;
+                    break;
+                case'C':
+                    n[2][1]=w;
+                    break;
+                case'H':
+                    n[3][1]=w;
+                    break;
+                case'S':
+                    n[4][1]=w;
+                    break;
+            }
+            break;
+        case'T':
+            switch(a)
+            {
+                case'D':
+                    n[1][10]=w;
+                    break;
+                case'C':
+                    n[2][10]=w;
+                    break;
+                case'H':
+                    n[3][10]=w;
+                    break;
+                case'S':
+                    n[4][10]=w;
+                    break;
+            }
+            break;
+        }
+    }
+    int s=0;
+    for(int i=1;i<=4;i++)
+        for(int j=1;j<=13;j++)
+            if(n[i][j]!=w)s++;
+    cout<<s<<endl;
+    return 0;
+}
